@@ -51,50 +51,57 @@ export default function SearchBox({updateInfo}) {
         }
     }
 
-    return (
-        <Paper elevation={2} sx={{ p: 3, borderRadius: 2 }}>
-            <Box component="form" onSubmit={handleSubmit} sx={{ 
-                display: 'flex', 
-                flexDirection: 'column', 
-                alignItems: 'center',
-                gap: 2
-            }}>
-                <TextField
-                    id="city"
-                    label="City Name"
-                    variant="outlined"
-                    required
-                    value={city}
-                    onChange={handleChange}
-                    fullWidth
-                    sx={{
-                        '& .MuiOutlinedInput-root': {
-                            '&:hover fieldset': {
-                                borderColor: 'primary.main',
-                            },
+   return (
+    <Box sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        width: '100%', // occupy full row width
+        mt: 4 // optional: add margin-top if needed
+    }}>
+        <Box component="form" onSubmit={handleSubmit} sx={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center',
+            gap: 2,
+            width: '50%',
+            justifyContent: 'center',
+        }}>
+            <TextField
+                id="city"
+                label="City Name"
+                variant="outlined"
+                required
+                value={city}
+                onChange={handleChange}
+                fullWidth
+                sx={{
+                    '& .MuiOutlinedInput-root': {
+                        '&:hover fieldset': {
+                            borderColor: 'primary.main',
                         },
-                    }}
-                />
-                <Button 
-                    variant="contained" 
-                    type='submit'
-                    startIcon={<SearchIcon />}
-                    sx={{
-                        minWidth: '200px',
-                        background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
-                        '&:hover': {
-                            background: 'linear-gradient(45deg, #1976D2 30%, #1CB5E0 90%)',
-                        },
-                    }}
-                >
-                    Search
-                </Button>
-                <Fade in={error}>
-                    <Typography color="error" sx={{ mt: 1 }}>
-                        City not found. Please try again.
-                    </Typography>
-                </Fade>
-            </Box>
-        </Paper>
-    );
+                    },
+                }}
+            />
+            <Button 
+                variant="contained" 
+                type='submit'
+                startIcon={<SearchIcon />}
+                sx={{
+                    minWidth: '200px',
+                    background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
+                    '&:hover': {
+                        background: 'linear-gradient(45deg, #1976D2 30%, #1CB5E0 90%)',
+                    },
+                }}
+            >
+                Search
+            </Button>
+            <Fade in={error}>
+                <Typography color="error" sx={{ mt: 1 }}>
+                    City not found. Please try again.
+                </Typography>
+            </Fade>
+        </Box>
+    </Box>
+);
 }

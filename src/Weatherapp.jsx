@@ -22,7 +22,7 @@ export default function Weatherapp() {
 
     return (
         <Container maxWidth="md">
-            <Paper elevation={3} sx={{ p: 4, mt: 4, borderRadius: 2, background: 'linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%)' }}>
+      
                 <Box sx={{ textAlign: "center", mb: 4 }}>
                     <Typography variant="h3" component="h1" gutterBottom sx={{ 
                         fontWeight: 'bold',
@@ -40,7 +40,7 @@ export default function Weatherapp() {
                     <SearchBox updateInfo={updateInfo}/>
                     <InfoBox info={weatherData}/>
                 </Box>
-            </Paper>
+           
         </Container>
     );
 }
